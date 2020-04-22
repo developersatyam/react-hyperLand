@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import NavBar from "../Components/NavBar";
 import PropCard from "../Components/PropCard";
@@ -10,9 +10,11 @@ function Home() {
   const [data, loading] = useFetch(
     "http://localhost:3000/api/queries/ListLandTitlesForSale"
   );
+
   const link = [
-    { name: "login", link: "login" },
+    { name: "Login", link: "login" },
     { name: "Sign Up", link: "signup" },
+    { name: "Registrar", link: "registrar" },
   ];
   return (
     <>

@@ -1,22 +1,25 @@
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+*{
+  text-decoration: none;
+  color: black;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-input{
+input {
   padding: 5px 10px;
   border: 1px solid black;
   margin: 5px;
 }
-.not-found{
-  margin:auto;
+.not-found {
+  margin: auto;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
@@ -25,6 +28,31 @@ input{
   display: flex;
   font-size: 60px;
 }
-.not-found span{
+.not-found span {
   color: red;
+}
+
+.nav {
+  width: 100vw;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav-head {
+  margin-top: 6px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+.nav-link-cont {
+  display: flex;
+  flex-direction: row;
+}
+.nav-link {
+  margin-top:6px ;
+  color: black;
+  display: flex;
+  flex-direction: row;
 }

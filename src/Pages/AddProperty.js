@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-var moment = require('moment');
+import { Container, Form, Button } from "react-bootstrap";
+import moment from "moment";
+
+import NavBar from "../Components/NavBar";
 
 const AddProperty = () => {
+  const link = [
+    { name: "Add Individual", link: "addIndividual" },
+    { name: "Registrar", link: "registrar" },
+  ];
   const [id, changeId] = useState(0);
   const [plotNo, changeplotNo] = useState("");
   const [postalCode, changepostalCode] = useState("");
@@ -25,7 +32,6 @@ const AddProperty = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    changeSubmitting(true);
     const payload = {
       $class: "org.landregv0.LandTitle",
       id,
@@ -65,77 +71,101 @@ const AddProperty = () => {
 
   return (
     <div>
-      <h1>Add Property Page</h1>
-      <Link to="/addProperty">Add Prop</Link>
-      <form onSubmit={onFormSubmit}>
-        <label>ID</label>
-        <input
-          type="number"
-          value={id}
-          onChange={(e) => changeId(e.target.value)}
-        />
-        <br />
-        <label>Plot No</label>
-        <input value={plotNo} onChange={(e) => changeplotNo(e.target.value)} />
-        <br />
-        <label>Postal Code</label>
-        <input
-          value={postalCode}
-          onChange={(e) => changepostalCode(e.target.value)}
-        />
-        <br />
-        <label>Address Line 1</label>
-        <input
-          value={addressLine1}
-          onChange={(e) => changeaddressLine1(e.target.value)}
-        />
-        <br />
-        <label>Address Line 2</label>
-        <input
-          value={adreessLine2}
-          onChange={(e) => changeadreessLine2(e.target.value)}
-        />
-        <br />
+      <NavBar links={link} />
+      <Container>
+        <h1>Add Property Page</h1>
+        <form onSubmit={onFormSubmit}>
+          <label>ID</label>
+          <Form.Control
+            type="number"
+            value={id}
+            onChange={(e) => changeId(e.target.value)}
+          />
+          <br />
+          <label>Plot No</label>
+          <Form.Control
+            value={plotNo}
+            onChange={(e) => changeplotNo(e.target.value)}
+          />
+          <br />
+          <label>Postal Code</label>
+          <Form.Control
+            value={postalCode}
+            onChange={(e) => changepostalCode(e.target.value)}
+          />
+          <br />
+          <label>Address Line 1</label>
+          <Form.Control
+            value={addressLine1}
+            onChange={(e) => changeaddressLine1(e.target.value)}
+          />
+          <br />
+          <label>Address Line 2</label>
+          <Form.Control
+            value={adreessLine2}
+            onChange={(e) => changeadreessLine2(e.target.value)}
+          />
+          <br />
 
-        <label>City</label>
-        <input value={city} onChange={(e) => changecity(e.target.value)} />
-        <br />
-        <label>District</label>
-        <input
-          value={distict}
-          onChange={(e) => changedistict(e.target.value)}
-        />
-        <br />
-        <label>State</label>
-        <input value={state} onChange={(e) => changestate(e.target.value)} />
-        <br />
-        <label>Area (in sq. meters)</label>
-        <input value={area} onChange={(e) => changearea(e.target.value)} />
-        <br />
-        <label>For Sale</label>
-        <input
-          value={forSale}
-          onChange={(e) => changeforSale(e.target.value)}
-        />
-        <br />
-        <label>Market value</label>
-        <input
-          value={marketValue}
-          onChange={(e) => changemarketValue(e.target.value)}
-        />
-        <br />
+          <label>City</label>
+          <Form.Control
+            value={city}
+            onChange={(e) => changecity(e.target.value)}
+          />
+          <br />
+          <label>District</label>
+          <Form.Control
+            value={distict}
+            onChange={(e) => changedistict(e.target.value)}
+          />
+          <br />
+          <label>State</label>
+          <Form.Control
+            value={state}
+            onChange={(e) => changestate(e.target.value)}
+          />
+          <br />
+          <label>Area (in sq. meters)</label>
+          <Form.Control
+            value={area}
+            onChange={(e) => changearea(e.target.value)}
+          />
+          <br />
+          <label>For Sale</label>
+          <Form.Control
+            value={forSale}
+            onChange={(e) => changeforSale(e.target.value)}
+          />
+          <br />
+          <label>Market value</label>
+          <Form.Control
+            value={marketValue}
+            onChange={(e) => changemarketValue(e.target.value)}
+          />
+          <br />
 
-        <label>Property Type</label>
-        <input
-          value={property_type}
-          onChange={(e) => changeproperty_type(e.target.value)}
-        />
-        <br />
-        <label>Owner (Aadhar Number)</label>
-        <input value={owner} onChange={(e) => changeowner(e.target.value)} />
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
+          <label>Property Type</label>
+          <Form.Control
+            value={property_type}
+            onChange={(e) => changeproperty_type(e.target.value)}
+          />
+          <br />
+          <label>Owner (Aadhar Number)</label>
+          <Form.Control
+            value={owner}
+            onChange={(e) => changeowner(e.target.value)}
+          />
+          <br />
+          <Button
+            variant={!isSubmitting ? "primary" : "success"}
+            type="submit"
+            value="Submit"
+          >
+            Add Property
+          </Button>
+        </form>
+      </Container>
+      <br />
     </div>
   );
 };
