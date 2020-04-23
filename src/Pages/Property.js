@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetch } from "./hooks";
-import { Container } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import NavBar from "../Components/NavBar";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { reactLocalStorage } from "reactjs-localstorage";
 
 const Property = (props) => {
   const link = [
@@ -13,6 +15,34 @@ const Property = (props) => {
   const [data, loading] = useFetch(
     `http://localhost:3000/api/LandTitle/${props.match.params.id}`
   );
+  const [bidAmount, changeBidAmount] = useState(0);
+
+  const user = reactLocalStorage.getObject("CookieIndi");
+
+  const onBidSubmit = (e) => {
+    e.preventDefault();
+    const payload = {
+      $class: "org.landregv0.LandBid",
+      id: "string",
+      land: `resource:org.landregv0.LandTitle#${props.match.params.id}`,
+      bidder: `resource:org.landregv0.Individual#${user.id}`,
+      seller: data.owner,
+      bidAmount,
+    };
+    var data2 = JSON.stringify(payload);
+    axios
+      .post("http://localhost:3000/api/LandBid", data2, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(function (response) {
+        console.log("Submitted!");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -51,6 +81,22 @@ const Property = (props) => {
           <Link to={`/user/${data.owner.substring(34)}`}>
             <p>Owned by: {data.owner.substring(34)}</p>
           </Link>
+          {user ? (
+            <form onSubmit={onBidSubmit}>
+              <label>Enter your bidding Amount</label>
+              <Form.Control
+                type="number"
+                value={bidAmount}
+                onChange={(e) => changeBidAmount(e.target.value)}
+              />
+              <br />
+              <Button variant="success" type="submit" value="Submit">
+                Bid
+              </Button>
+            </form>
+          ) : (
+            <div>No User</div>
+          )}
         </Container>
       )}
     </div>
