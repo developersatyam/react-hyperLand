@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 
@@ -7,6 +7,7 @@ import NavBar from "../Components/NavBar";
 
 const AddIndividual = () => {
   const link = [
+    { name: "Admin", link: "admin" },
     { name: "Add Property", link: "addProperty" },
     { name: "Registrar", link: "registrar" },
   ];
@@ -25,7 +26,6 @@ const AddIndividual = () => {
   const [gender, changegender] = useState("");
   const [bankBal, changebankBal] = useState(0);
   const [mode, changemode] = useState("");
-  const [bidAmount, changebidAmount] = useState(0);
   const [isSubmitting, changeSubmitting] = useState(false);
 
   const onFormSubmit = (e) => {
@@ -50,7 +50,7 @@ const AddIndividual = () => {
       bankBal,
       mode,
       status: "DEFAULT",
-      bidAmount,
+      bidAmount: 0,
     };
     var data = JSON.stringify(payload);
     console.log(data);

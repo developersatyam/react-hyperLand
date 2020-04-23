@@ -6,14 +6,14 @@ import { Container, Form, Button } from "react-bootstrap";
 
 import NavBar from "../Components/NavBar";
 
-const Login = () => {
+const RegLogin = () => {
   let history = useHistory();
-  const [password, changePassword] = useState("");
-  const [aadharNumber, changeAadharNum] = useState(0);
+  const [rId, changerId] = useState(0);
   useEffect(() => {
-    const CookieUser = reactLocalStorage.getObject("CookieIndi");
+    const CookieUser = reactLocalStorage.getObject("CookieReg");
+    console.log(CookieUser);
     if (CookieUser.user) {
-      history.push(`/user/${CookieUser.user}`);
+      history.push(`/registrar/${CookieUser.user}`);
     }
   });
 
@@ -22,11 +22,12 @@ const Login = () => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     axios
-      .get(`http://localhost:3000/api/Individual/${aadharNumber}`)
+      .get(`http://localhost:3000/api/Registerar/${rId}`)
       .then((user) => {
         console.log(user.data);
-        reactLocalStorage.setObject("CookieIndi", { user: `${aadharNumber}` });
-        history.push(`/user/${aadharNumber}`);
+        reactLocalStorage.setObject("CookieReg", { user: `${rId}` });
+        console.log(reactLocalStorage.getObject("CookieReg"));
+        history.push(`/registrar/${rId}`);
       })
       .catch((err) => {
         console.log(err);
@@ -38,20 +39,15 @@ const Login = () => {
       <NavBar links={link} />
       <Container>
         <h1>Login</h1>
-        <label>Enter your Aadhar Number</label>
+        <label>Enter your Registrar Id</label>
         <form onSubmit={onFormSubmit}>
           <Form.Control
             type="number"
-            value={aadharNumber}
-            onChange={(e) => changeAadharNum(e.target.value)}
+            value={rId}
+            onChange={(e) => changerId(e.target.value)}
           />
           <br />
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => changePassword(e.target.value)}
-          />
-          <br />
+
           <Button variant="success" type="submit" value="Submit">
             Login
           </Button>
@@ -61,4 +57,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default RegLogin;

@@ -12,13 +12,14 @@ const NavBar = (props) => {
           {props.links.map((link, index) => {
             return (
               <Link className="nav-link" key={index} to={link.link}>
-                {" "}
-                {link.name}{" "}
+                {link.name}
               </Link>
             );
           })}
         </div>
       </div>
+      <br />
+      <br />
       <br />
       <br />
     </div>

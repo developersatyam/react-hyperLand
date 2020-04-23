@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 import moment from "moment";
@@ -8,6 +8,7 @@ import NavBar from "../Components/NavBar";
 
 const AddProperty = () => {
   const link = [
+    { name: "Admin", link: "admin" },
     { name: "Add Individual", link: "addIndividual" },
     { name: "Registrar", link: "registrar" },
   ];
