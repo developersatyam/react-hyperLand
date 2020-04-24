@@ -49,7 +49,6 @@ function Home() {
             {data.map((property) => (
               <Link key={property.id} to={`property/${property.id}`}>
                 <PropCard
-                  onCli
                   plotNo={property.address.plotNo}
                   postalCode={property.address.postalCode}
                   area={property.area}

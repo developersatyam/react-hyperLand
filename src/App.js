@@ -12,6 +12,7 @@ import Property from "./Pages/Property";
 import AddRegistrar from "./Pages/AddRegistrar";
 import Admin from "./Pages/Admin";
 import RegLogin from "./Pages/RegLogin";
+import Landing from "./Pages/Landing";
 
 import { reactLocalStorage } from "reactjs-localstorage";
 reactLocalStorage.setObject("CookieUser", null);
@@ -20,7 +21,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home} exact />
+        <Route path="/" component={Landing} exact />
+        <Route path="/list" component={Home} exact />
         <Route path="/admin" component={Admin} exact />
         <Route path="/addIndividual" component={AddIndividual} exact />
         <Route path="/addProperty" component={AddProperty} exact />

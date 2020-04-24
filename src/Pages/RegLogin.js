@@ -36,7 +36,7 @@ const RegLogin = () => {
   };
 
   return (
-    <div>
+    <div class="body">
       <NavBar links={link} />
       <Container>
         <h1>Login</h1>
@@ -49,11 +49,17 @@ const RegLogin = () => {
           />
           <br />
 
-          <Button variant="success" type="submit" value="Submit">
+          <Button variant="success" type="submit" value="Submit"  class="btn">
             Login
           </Button>
         </form>
       </Container>
+      <br></br>       <br></br>       <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>
+      <br></br>      <br></br>
+      <footer>
+        <div class="sun"></div>
+        <div class="grass"></div>
+      </footer>
     </div>
   );
 };

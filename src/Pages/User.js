@@ -17,7 +17,7 @@ const Property = (props) => {
   ];
   console.log(lands);
   return (
-    <div>
+    <div class="body">
       <NavBar links={link} />
       {loading ? (
         <div className="loading">

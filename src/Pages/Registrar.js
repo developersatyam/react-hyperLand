@@ -44,7 +44,7 @@ const Property = (props) => {
       });
   };
   return (
-    <div>
+    <div class="body">
       <Navbar links={link} />
       {loading ? (
         <div className="loading">
@@ -90,6 +90,7 @@ const Property = (props) => {
                   <Button
                     onClick={(e) => acceptFn(cases.id)}
                     className="success"
+                    class="btn"
                   >
                     Accept
                   </Button>
@@ -99,6 +100,12 @@ const Property = (props) => {
           )}
         </Container>
       )}
+       <br></br>       <br></br>       <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>
+      <br></br>      <br></br>
+      <footer>
+        <div class="sun"></div>
+        <div class="grass"></div>
+      </footer>
     </div>
   );
 };

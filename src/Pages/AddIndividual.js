@@ -10,7 +10,7 @@ const AddIndividual = () => {
   const link = [
     { name: "Admin", link: "admin" },
     { name: "Add Property", link: "addProperty" },
-    { name: "Registrar", link: "registrar" },
+    { name: "Registrar", link: "registrar" }
   ];
 
   const [aadharNumber, changeAadharNum] = useState(0);
@@ -29,7 +29,7 @@ const AddIndividual = () => {
   const [mode, changemode] = useState("");
   const [isSubmitting, changeSubmitting] = useState(false);
 
-  const onFormSubmit = (e) => {
+  const onFormSubmit = e => {
     e.preventDefault();
     const payload = {
       $class: "org.landregv0.Individual",
@@ -45,131 +45,139 @@ const AddIndividual = () => {
         adreessLine2,
         city,
         distict,
-        state,
+        state
       },
       gender,
       bankBal,
       mode,
       status: "DEFAULT",
-      bidAmount: 0,
+      bidAmount: 0
     };
     var data = JSON.stringify(payload);
     axios
       .post(`${backApi}/api/Individual`, data, {
         headers: {
-          "Content-Type": "application/json",
-        },
+          "Content-Type": "application/json"
+        }
       })
-      .then(function (response) {
+      .then(function(response) {
         changeSubmitting(true);
         console.log("Submitted!");
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
   };
 
   return (
-    <div>
+    <div class="body">
       <NavBar links={link} />
       <Container>
         <h1>Add Individual Page</h1>
         <form onSubmit={onFormSubmit}>
-          <label>Aadhar Number</label>
+          <label class="txt">Aadhar Number</label>
+          <br></br>
           <Form.Control
             type="number"
             value={aadharNumber}
-            onChange={(e) => changeAadharNum(e.target.value)}
+            onChange={e => changeAadharNum(e.target.value)}
           />
           <br />
           <label>First Name</label>
           <Form.Control
             value={first_name}
-            onChange={(e) => changefirst_name(e.target.value)}
+            onChange={e => changefirst_name(e.target.value)}
           />
           <br />
           <label>Last Name</label>
           <Form.Control
             value={last_name}
-            onChange={(e) => changelast_name(e.target.value)}
+            onChange={e => changelast_name(e.target.value)}
           />
           <br />
           <label>Father Name</label>
           <Form.Control
             value={father_name}
-            onChange={(e) => changefather_name(e.target.value)}
+            onChange={e => changefather_name(e.target.value)}
           />
           <br />
           <label>PAN Card No</label>
           <Form.Control
             value={pancard_no}
-            onChange={(e) => changepancard_no(e.target.value)}
+            onChange={e => changepancard_no(e.target.value)}
           />
           <br />
           <label>Postal Code</label>
           <Form.Control
             value={postalCode}
-            onChange={(e) => changepostalCode(e.target.value)}
+            onChange={e => changepostalCode(e.target.value)}
           />
           <br />
           <label>Address Line 1</label>
           <Form.Control
             value={addressLine1}
-            onChange={(e) => changeaddressLine1(e.target.value)}
+            onChange={e => changeaddressLine1(e.target.value)}
           />
           <br />
           <label>Address Line 2</label>
           <Form.Control
             value={adreessLine2}
-            onChange={(e) => changeadreessLine2(e.target.value)}
+            onChange={e => changeadreessLine2(e.target.value)}
           />
           <br />
           <label>City</label>
           <Form.Control
             value={city}
-            onChange={(e) => changecity(e.target.value)}
+            onChange={e => changecity(e.target.value)}
           />
           <br />
           <label>District</label>
           <Form.Control
             value={distict}
-            onChange={(e) => changedistict(e.target.value)}
+            onChange={e => changedistict(e.target.value)}
           />
           <br />
           <label>State</label>
           <Form.Control
             value={state}
-            onChange={(e) => changestate(e.target.value)}
+            onChange={e => changestate(e.target.value)}
           />
           <br />
           <label>Gender</label>
           <Form.Control
             value={gender}
-            onChange={(e) => changegender(e.target.value)}
+            onChange={e => changegender(e.target.value)}
           />
           <br />
           <label>Bank Balance</label>
           <Form.Control
             value={bankBal}
-            onChange={(e) => changebankBal(e.target.value)}
+            onChange={e => changebankBal(e.target.value)}
           />
           <br />
           <label>Mode</label>
           <Form.Control
             value={mode}
-            onChange={(e) => changemode(e.target.value)}
+            onChange={e => changemode(e.target.value)}
           />
           <br />{" "}
           <Button
             variant={!isSubmitting ? "primary" : "success"}
             type="submit"
             value="Submit"
+            class="btn"
           >
             Add Individual
           </Button>
         </form>
       </Container>
       <br />
+      <br></br>       <br></br>       <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>
+      <br></br>      <br></br>
+      <footer>
+        <div class="sun"></div>
+        <div class="grass"></div>
+      </footer>
     </div>
   );
 };

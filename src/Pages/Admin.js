@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 
 const Admin = () => {
   return (
-    <div>
+    <div class="body">
       <Container>
         <br />
         <h1>Welcome Admin</h1>
@@ -14,6 +14,12 @@ const Admin = () => {
         <br />
         <Link to="/addProperty">Add Property</Link>
       </Container>
+      <br></br>       <br></br>       <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>
+      <br></br>      <br></br>
+      <footer>
+        <div class="sun"></div>
+        <div class="grass"></div>
+      </footer>
     </div>
   );
 };

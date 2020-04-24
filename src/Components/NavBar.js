@@ -5,7 +5,7 @@ const NavBar = (props) => {
   return (
     <div>
       <div className="nav">
-        <Link to="/">
+        <Link to="/list">
           <p className="nav-head">HyperLand</p>
         </Link>
         <div className="nav-link-cont">

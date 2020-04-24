@@ -46,7 +46,7 @@ const Property = (props) => {
   };
 
   return (
-    <div>
+    <div class="body">
       <NavBar links={link} />
       {loading ? (
         <div className="loading">
@@ -91,7 +91,7 @@ const Property = (props) => {
                 onChange={(e) => changeBidAmount(e.target.value)}
               />
               <br />
-              <Button variant="success" type="submit" value="Submit">
+              <Button variant="success" type="submit" value="Submit"  class="btn">
                 Bid
               </Button>
             </form>
@@ -100,6 +100,12 @@ const Property = (props) => {
           )}
         </Container>
       )}
+       <br></br>       <br></br>       <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>
+      <br></br>      <br></br>
+      <footer>
+        <div class="sun"></div>
+        <div class="grass"></div>
+      </footer>
     </div>
   );
 };

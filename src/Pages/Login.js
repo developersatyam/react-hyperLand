@@ -9,7 +9,6 @@ import NavBar from "../Components/NavBar";
 
 const Login = () => {
   let history = useHistory();
-  const [password, changePassword] = useState("");
   const [aadharNumber, changeAadharNum] = useState(0);
   useEffect(() => {
     const CookieUser = reactLocalStorage.getObject("CookieIndi");
@@ -35,7 +34,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div class="body">
       <NavBar links={link} />
       <Container>
         <h1>Login</h1>
@@ -47,13 +46,9 @@ const Login = () => {
             onChange={(e) => changeAadharNum(e.target.value)}
           />
           <br />
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => changePassword(e.target.value)}
-          />
+
           <br />
-          <Button variant="success" type="submit" value="Submit">
+          <Button variant="success" type="submit" value="Submit" class="btn">
             Login
           </Button>
         </form>
