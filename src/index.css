@@ -1,6 +1,9 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway:200");
 @import url("https://fonts.googleapis.com/css?family=Raleway:200");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
 
 body {
   margin: 0;
@@ -154,4 +157,5 @@ input {
   100% {
     opacity: 0;
   }
+  
 }

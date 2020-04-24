@@ -48,7 +48,7 @@ const AddRegistrar = () => {
   };
 
   return (
-    <div>
+    <div class="body">
       <NavBar links={link} />
       <Container>
         <h1>Add Registrar Page</h1>
@@ -83,12 +83,19 @@ const AddRegistrar = () => {
             variant={!isSubmitting ? "primary" : "success"}
             type="submit"
             value="Submit"
+            class="btn"
           >
             Add Property
           </Button>
         </form>
       </Container>
       <br />
+      <br></br>       <br></br>       <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>
+      <br></br>      <br></br>
+      <footer>
+        <div class="sun"></div>
+        <div class="grass"></div>
+      </footer>
     </div>
   );
 };

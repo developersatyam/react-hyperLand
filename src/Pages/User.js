@@ -17,7 +17,7 @@ const Property = (props) => {
   ];
   console.log(lands);
   return (
-    <div>
+    <div class="body">
       <NavBar links={link} />
       {loading ? (
         <div className="loading">
@@ -58,6 +58,12 @@ const Property = (props) => {
           <p>Status: {data.status}</p>
         </Container>
       )}
+       <br></br>       <br></br>       <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>      <br></br>      <br></br>     <br></br>      <br></br>      <br></br>
+      <br></br>      <br></br>
+      <footer>
+        <div class="sun"></div>
+        <div class="grass"></div>
+      </footer>
     </div>
   );
 };
