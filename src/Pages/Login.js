@@ -3,6 +3,7 @@ import axios from "axios";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { useHistory } from "react-router-dom";
 import { Container, Form, Button } from "react-bootstrap";
+import { backApi } from "../URL";
 
 import NavBar from "../Components/NavBar";
 
@@ -22,7 +23,7 @@ const Login = () => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     axios
-      .get(`http://localhost:3000/api/Individual/${aadharNumber}`)
+      .get(`${backApi}/api/Individual/${aadharNumber}`)
       .then((user) => {
         console.log(user.data);
         reactLocalStorage.setObject("CookieIndi", { user: `${aadharNumber}` });

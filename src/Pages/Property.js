@@ -4,6 +4,7 @@ import { Container, Form, Button } from "react-bootstrap";
 import NavBar from "../Components/NavBar";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { backApi } from "../URL";
 import { reactLocalStorage } from "reactjs-localstorage";
 
 const Property = (props) => {
@@ -13,7 +14,7 @@ const Property = (props) => {
     { name: "Add Property", link: "/addProperty" },
   ];
   const [data, loading] = useFetch(
-    `http://localhost:3000/api/LandTitle/${props.match.params.id}`
+    `${backApi}/api/LandTitle/${props.match.params.id}`
   );
   const [bidAmount, changeBidAmount] = useState(0);
 
@@ -31,7 +32,7 @@ const Property = (props) => {
     };
     var data2 = JSON.stringify(payload);
     axios
-      .post("http://localhost:3000/api/LandBid", data2, {
+      .post(`${backApi}/api/LandBid`, data2, {
         headers: {
           "Content-Type": "application/json",
         },

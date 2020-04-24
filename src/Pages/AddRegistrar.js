@@ -4,6 +4,7 @@ import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 
 import NavBar from "../Components/NavBar";
+import { backApi } from "../URL";
 
 const AddRegistrar = () => {
   const link = [
@@ -32,7 +33,7 @@ const AddRegistrar = () => {
     };
     var data = JSON.stringify(payload);
     axios
-      .post("http://localhost:3000/api/Registerar", data, {
+      .post(`${backApi}/api/Registerar`, data, {
         headers: {
           "Content-Type": "application/json",
         },

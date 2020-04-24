@@ -1,12 +1,17 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
+
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 * {
   text-decoration: none;
   color: black;
+  font-family: Raleway;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

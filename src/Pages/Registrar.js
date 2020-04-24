@@ -4,14 +4,13 @@ import axios from "axios";
 import Navbar from "../Components/NavBar";
 import { Container, Button } from "react-bootstrap";
 import moment from "moment";
+import { backApi } from "../URL";
 
 const Property = (props) => {
   const [data, loading] = useFetch(
-    `http://localhost:3000/api/Registerar/${props.match.params.rId}`
+    `${backApi}/api/Registerar/${props.match.params.rId}`
   );
-  const [pendingCases, abc] = useFetch(
-    `http://localhost:3000/api/PendingLandTransaction`
-  );
+  const [pendingCases, abc] = useFetch(`${backApi}/api/PendingLandTransaction`);
 
   const link = [
     { name: "Admin", link: "/admin" },
@@ -32,7 +31,7 @@ const Property = (props) => {
     };
     var data = JSON.stringify(payload);
     axios
-      .post("http://localhost:3000/api/TransferLandTitle", data, {
+      .post(`${backApi}/api/TransferLandTitle`, data, {
         headers: {
           "Content-Type": "application/json",
         },

@@ -4,12 +4,13 @@ import NavBar from "../Components/NavBar";
 import PropCard from "../Components/PropCard";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { useFetch } from "./hooks";
+import { backApi } from "../URL";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
 function Home() {
   const [data, loading] = useFetch(
-    "http://localhost:3000/api/queries/ListLandTitlesForSale"
+    `${backApi}/api/queries/ListLandTitlesForSale`
   );
   let user = "";
   const CookieUser = reactLocalStorage.getObject("CookieUser");

@@ -2,13 +2,14 @@ import React, { useReducer } from "react";
 import { useFetch } from "./hooks";
 import NavBar from "../Components/NavBar";
 import { Container } from "react-bootstrap";
+import { backApi } from "../URL";
 
 const Property = (props) => {
   const [data, loading] = useFetch(
-    `http://localhost:3000/api/Individual/${props.match.params.id}`
+    `${backApi}/api/Individual/${props.match.params.id}`
   );
   const [lands, abc] = useFetch(
-    `http://localhost:3000/api/queries/ListOwnedLandTitles?owner=${props.match.params.id}`
+    `${backApi}/api/queries/ListOwnedLandTitles?owner=${props.match.params.id}`
   );
   const link = [
     { name: "Admin", link: "/admin" },

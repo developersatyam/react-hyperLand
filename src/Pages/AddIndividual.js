@@ -4,6 +4,7 @@ import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 
 import NavBar from "../Components/NavBar";
+import { backApi } from "../URL";
 
 const AddIndividual = () => {
   const link = [
@@ -53,9 +54,8 @@ const AddIndividual = () => {
       bidAmount: 0,
     };
     var data = JSON.stringify(payload);
-    console.log(data);
     axios
-      .post("http://localhost:3000/api/Individual", data, {
+      .post(`${backApi}/api/Individual`, data, {
         headers: {
           "Content-Type": "application/json",
         },

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 import moment from "moment";
+import { backApi } from "../URL";
 
 import NavBar from "../Components/NavBar";
 
@@ -56,7 +57,7 @@ const AddProperty = () => {
     };
     var data = JSON.stringify(payload);
     axios
-      .post("http://localhost:3000/api/LandTitle", data, {
+      .post(`${backApi}/api/LandTitle`, data, {
         headers: {
           "Content-Type": "application/json",
         },
